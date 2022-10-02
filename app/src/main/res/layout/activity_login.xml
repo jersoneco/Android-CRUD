@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bethanie_danielle_pablico"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:padding="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/student_data_app"
+            android:textStyle="bold|italic"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:padding="8dp"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_weight="0">
+            <TableLayout
+                android:id="@+id/tableMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="#F6E9E9">
+                <TableRow
+                    android:background="#9E989494">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="@string/name"
+                        android:textStyle="bold"
+                        android:layout_weight="4"
+                        android:textColor="@color/black"
+                        android:gravity="center_horizontal" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="@string/section"
+                        android:textStyle="bold"
+                        android:layout_weight="4"
+                        android:textColor="@color/black"
+                        android:gravity="center_horizontal" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="@string/course"
+                        android:textStyle="bold"
+                        android:layout_weight="4"
+                        android:textColor="@color/black"
+                        android:gravity="center_horizontal" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="@string/year"
+                        android:textStyle="bold"
+                        android:layout_weight="4"
+                        android:textColor="@color/black"
+                        android:gravity="center_horizontal" />
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center|bottom|center_horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1">
+            <Button
+                android:onClick="Create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create"
+                android:layout_margin="5dp"
+                style="?android:attr/buttonBarButtonStyle" />
+            <Button
+                android:onClick="Read"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/read"
+                android:layout_margin="5dp"
+                style="?android:attr/buttonBarButtonStyle" />
+            <Button
+                android:onClick="Update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/update"
+                android:layout_margin="5dp"
+                style="?android:attr/buttonBarButtonStyle" />
+            <Button
+                android:onClick="Delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete"
+                android:layout_margin="5dp"
+                style="?android:attr/buttonBarButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/modal"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#56878383">
+        <LinearLayout
+            android:layout_width="390dp"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/modalHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="italic|bold"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_margin="6dp"/>
+            <Spinner
+                android:id="@+id/spinnerOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>
+            <EditText
+                android:id="@+id/student_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/student_name"
+                android:inputType="text"
+                android:gravity="center"
+                android:autofillHints="" />
+            <EditText
+                android:id="@+id/student_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/student_section"
+                android:autofillHints=""
+                android:gravity="center"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/student_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/student_course"
+                android:inputType="text"
+                android:gravity="center"
+                android:autofillHints="" />
+            <EditText
+                android:id="@+id/student_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/student_year"
+                android:inputType="text"
+                android:gravity="center"
+                android:autofillHints="" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center">
+                <Button
+                    android:id="@+id/buttonForUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/update"
+                    android:onClick="updateConfirm"
+                    style="?android:attr/buttonBarButtonStyle" />
+                <Button
+                    android:id="@+id/buttonForCreate"
+                    android:onClick="createConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/create"
+                    style="?android:attr/buttonBarButtonStyle" />
+                <Button
+                    android:id="@+id/buttonForDelete"
+                    android:onClick="deleteConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@string/delete"
+                    style="?android:attr/buttonBarButtonStyle" />
+                <Button
+                    android:onClick="Cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    style="?android:attr/buttonBarButtonStyle" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
